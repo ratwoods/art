@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
 
 
-
-<body>
   <!-- Page Content -->
   <div class="container">
 
@@ -153,14 +149,17 @@
             </div>
           </div>
         </div>
+	<!-- Side Widget Well -->
 
-        <!-- Side Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Side Widget</h5>
-          <div class="card-body">
-            You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-          </div>
-        </div>
+   	<div class="well">
+    	  <h4>Recent Posts</h4>
+   	   <% @article.each do |a| %>
+            <%= a.user.username %>
+            <strong><%= link_to a.title, a %></strong>
+   	     <p><%= truncate (a.body) %></p>
+   	   <% end %>
+   	</div>
+
 
       </div>
 
@@ -176,6 +175,4 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-</body>
 
-</html>
